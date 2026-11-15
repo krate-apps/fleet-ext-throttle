@@ -1,0 +1,22 @@
+schema: 1
+id: org.fleet.throttle
+name: Throttle Profiles
+description: Define named throttle profiles and assign them to torrents.
+version: 1.0.0
+api: ">=1.0.0 <2.0.0"
+engines:
+  - rtorrent
+capabilities:
+  - settings.read
+  - settings.write
+  - torrents.read
+  - torrents.actions
+  - storage.read
+  - storage.write
+frontend:
+  type: declarative
+  entry: ui/extension.json
+backend:
+  type: process
+  executable: bin/throttle-worker
+  protocol: jsonrpc-2

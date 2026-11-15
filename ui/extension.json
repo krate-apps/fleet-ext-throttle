@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "extensionId": "org.fleet.throttle",
+  "pages": [
+    {
+      "id": "profiles",
+      "title": "Throttle Profiles",
+      "route": "/ext/org.fleet.throttle/profiles"
+    }
+  ],
+  "actions": [
+    {
+      "id": "sync-profiles",
+      "label": "Sync profiles to rTorrent",
+      "target": "global",
+      "primary": true
+    },
+    {
+      "id": "apply-selected",
+      "label": "Apply profile to selection",
+      "target": "selection"
+    }
+  ],
+  "panels": [
+    {
+      "id": "throttle-settings",
+      "title": "Throttle",
+      "placement": "settings"
+    }
+  ],
+  "forms": [
+    {
+      "id": "throttle-profile",
+      "title": "Throttle profile",
+      "fields": [
+        {
+          "name": "name",
+          "label": "rTorrent throttle name (e.g. thr_up128)",
+          "kind": "text",
+          "required": true,
+          "placeholder": "account-name"
+        },
+        {
+          "name": "label",
+          "label": "Display label",
+          "kind": "text",
+          "placeholder": "movies"
+        },
+        {
+          "name": "upRate",
+          "label": "Upload limit bytes/sec (0=unlimited)",
+          "kind": "number",
+          "required": true,
+          "advanced": true
+        },
+        {
+          "name": "downRate",
+          "label": "Download limit bytes/sec (0=unlimited)",
+          "kind": "number",
+          "required": true,
+          "advanced": true
+        }
+      ],
+      "description": "Adjust Throttle profile — essentials first, extras under More options."
+    },
+    {
+      "id": "throttle-apply",
+      "title": "Apply profile",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Throttle name (empty clears)",
+          "kind": "text",
+          "placeholder": "account-name"
+        },
+        {
+          "name": "hashes",
+          "label": "Comma-separated torrent hashes",
+          "kind": "text",
+          "required": true
+        }
+      ],
+      "description": "Adjust Apply profile — essentials first, extras under More options."
+    }
+  ]
+}
